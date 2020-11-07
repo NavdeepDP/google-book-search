@@ -9,8 +9,7 @@ const SearchInput = () => {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    console.log("form submitted");
-    debugger;
+    console.log("form submitted");    
     if (searchBook == "") {
       console.log("No book to search");
       return;

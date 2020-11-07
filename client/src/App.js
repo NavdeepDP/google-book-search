@@ -5,8 +5,7 @@ import "./App.css";
 import Search from "./pages/Search/Search";
 import Save from "./pages/Save/Save";
 import NabBar from "./components/NavBar/NavBar";
-function App() {
-  debugger;
+function App() {  
   console.log(window.location.pathname);
   return (
     <div className="App">
