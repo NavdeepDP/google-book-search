@@ -1,11 +1,18 @@
-import React from 'react';
+import React from "react";
+import SearchInput from "../../components/SearchInput/SearchInput";
 
 const Search = () => {
-    return (
-        <div>
-            <h1>Search Books</h1>
+  return (
+    <div>
+      <div className="container text-left">
+        <div className="row">
+          <div className="col-sm-12">
+              <SearchInput /> 
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Search;
