@@ -67,6 +67,7 @@ const SearchInput = () => {
                 authors={book.volumeInfo.authors}
                 image={book.volumeInfo.imageLinks.smallThumbnail}
                 description={book.volumeInfo.description}
+                link={book.volumeInfo.infoLink}
               />
             );
           })}

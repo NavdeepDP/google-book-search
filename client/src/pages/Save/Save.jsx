@@ -76,6 +76,7 @@ const Save = () => {
                   authors={book.authors}
                   image={book.image}
                   description={book.description}
+                  link={book.link}
                   handleClick={handleBookDelete}
                 />
               );

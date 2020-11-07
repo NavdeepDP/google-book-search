@@ -21,9 +21,11 @@ const SavedBooks = (props) => {
         </div>
         <div class="col-sm-4">
           <div className="text-right">
-            <button id="view-btn" type="submit" className="btn btn-primary ">
-              View
-            </button>
+          <a href={props.link} target="_blank">
+              <button id="view-btn" type="submit" className="btn btn-primary ">
+                View
+              </button>
+            </a>
             <button type="submit" className="btn btn-primary " id={props.id} onClick={props.handleClick}>
               Delete
             </button>
