@@ -1,6 +1,33 @@
 import React from "react";
 import "./BookResult.css";
+import axios from "axios";
 const BookResult = (props) => {
+
+    const handleOnClick =(event)=>{
+        event.preventDefault();
+       const book ={
+
+         title: props.title,
+         subTitle: props.title,
+         authors: props.authors,
+         description: props.description,
+         image: props.image,
+         link: ""
+
+       };
+       
+        axios
+        .post("/api/books", book)
+        .then((result) => {
+          console.log("Books");
+          console.log(result);
+          
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+
   return (
     <div>
       <div className="row">
@@ -19,7 +46,7 @@ const BookResult = (props) => {
             <button id="view-btn" type="submit" className="btn btn-primary ">
               View
             </button>
-            <button type="submit" className="btn btn-primary ">
+            <button type="submit" className="btn btn-primary " onClick={handleOnClick}>
               Save
             </button>
           </div>

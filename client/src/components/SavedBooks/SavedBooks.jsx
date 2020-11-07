@@ -2,7 +2,8 @@ import React from "react";
 import "./SavedBooks.css";
 const SavedBooks = (props) => {
 
-   
+
+  
 
   return (
     <div id="saved-book">
@@ -23,7 +24,7 @@ const SavedBooks = (props) => {
             <button id="view-btn" type="submit" className="btn btn-primary ">
               View
             </button>
-            <button type="submit" className="btn btn-primary ">
+            <button type="submit" className="btn btn-primary " id={props.id} onClick={props.handleClick}>
               Delete
             </button>
           </div>

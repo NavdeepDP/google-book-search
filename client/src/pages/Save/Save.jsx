@@ -6,6 +6,41 @@ import "./Save.css"
 const Save = () => {
   const [books, setBooks] = useState([]);
 
+  const handleBookDelete = (e) =>{
+     e.preventDefault();
+     console.log("Delete clicked");
+     console.log(e.target);
+    
+      // make a api call to get delete saved book
+    axios
+    .delete("/api/books/" + e.target.id)
+    .then((result) => {      
+      console.log(result);
+
+      loadBooks();
+      
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  };
+
+  const loadBooks= ()=> {
+
+    // make a api call to get saved books
+    axios
+      .get("/api/books")
+      .then((result) => {
+        console.log("Books");
+        console.log(result);
+        setBooks(result.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect(() => {
     // make a api call to get saved books
     axios
@@ -35,11 +70,13 @@ const Save = () => {
               console.log("book.volumeInfo.title");
               return (
                 <SavedBooks
+                  id={book._id}
                   title={book.title}
                   subTitle=""
                   authors={book.authors}
                   image={book.image}
                   description={book.description}
+                  handleClick={handleBookDelete}
                 />
               );
             })}
